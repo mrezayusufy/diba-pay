@@ -2,20 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-synthesis: none;
-}
+  @layer base {
+ 
+    * {
+      @apply border-border;
+      font-family: 'Yekan Bakh';
+    }
+    body {
+      @apply bg-background text-foreground; 
+    } 
+    .add-to-cart {
+      @apply absolute -bottom-4 end-0 mt-4 flex items-center rounded-b-full rounded-s-full bg-orange-500 px-2 py-2 text-sm text-white;
+    }
+
+    html {
+      scrollbar-width: thin;
+    }
+    nav {
+      @apply flex items-center justify-between bg-white px-3 py-2 shadow;
+      position: fixed; 
+      width: 100lvw;
+      top: -1px;
+    }
+    footer {
+      @apply fixed bottom-0 right-0 w-svw bg-white px-3 py-2 text-xs shadow;
+      box-shadow: 0 0px 19px #0000003d;
+    }    
+    * {
+      user-select: none;
+    }
+    .wrapper {
+      @apply relative mt-5 flex w-20 flex-col items-center text-nowrap px-5 text-center;
+    }
+    .bullet {
+      @apply content-[''] aspect-square relative size-3 rounded-full bg-slate-100 border-2 border-slate-500 ;
+    }
+    .bullet::after {
+      @apply content-[''] absolute left-0 h-[1px] w-14 bg-slate-500 -z-10 ;
+    }
+    .bullet::before{
+      @apply content-[''] absolute bg-slate-500 h-[1px] w-14 right-0 -z-10;
+    }
+    .dir-ltr {
+      direction: ltr !important;
+    }
+    input {
+      font-variant-numeric: persian !important;
+    }
+  }
