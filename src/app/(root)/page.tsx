@@ -1,9 +1,11 @@
 import { ProductsList } from "@/components";
+import Categories from "./components/categories";
 
 export default function Home() {
   return (
-    <div className="font-sans items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
-      <h1 className="font-semibold text-slate-400">محصولات</h1>
+    <div className="items-center justify-items-center py-3 font-sans">
+      <Categories/>
+      <h1 className="mb-2 mt-3 text-sm font-semibold text-gray-400">محصولات</h1>
       <ProductsList/>
     </div>
   );

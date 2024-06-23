@@ -18,5 +18,5 @@ const _p = (i: string, p = '۰۱۲۳۴۵۶۷۸۹') => i.replace(/\d/g, (c: any) 
  * @returns 
  */
 const _l = (i: string, p = '۰۱۲۳۴۵۶۷۸۹', l = '0123456789') => i.replace(/[۰-۹]/g, (c: string) => l[p.indexOf(c)]);
-
-export { __, _p, cn, _l }
+const _d = (d: number) => new Intl.NumberFormat('fa-IR').format(d);
+export { __, _p, cn, _l, _d }

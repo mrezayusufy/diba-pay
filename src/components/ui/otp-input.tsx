@@ -34,7 +34,7 @@ const OtpInput: React.FC<OtpInputProps> = ({ length, onChange }) => {
   return (
     <div dir='ltr' style={{ display: 'flex', justifyContent: 'center', gap: '5px' }}>
       {otp.map((value, index) => (
-        <input
+        <input 
           key={index}
           ref={(el: any ) => inputRefs.current[index] = el}
           id={`otp-input-${index}`}

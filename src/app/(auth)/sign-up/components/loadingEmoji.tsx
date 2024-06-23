@@ -1,0 +1,1 @@
+export const LoadingEmoji = () => <div className="text-xl animate-spin size-6">⏳</div>

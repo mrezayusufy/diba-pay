@@ -14,7 +14,7 @@ interface Shop {
   logo: Image;
 }
 interface Product {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   type: ProductType;

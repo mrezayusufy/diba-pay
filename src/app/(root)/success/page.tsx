@@ -1,3 +1,3 @@
 export default function Page(){
-  return <div>Failure</div>
+  return <div>success</div>
 }

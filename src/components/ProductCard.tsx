@@ -1,27 +1,25 @@
 // components/ProductCard.tsx
 import { FC } from 'react';
 import { AddCartIcon } from './icons';
+import { useCartStore } from '@/app/(root)/store';
+import { _d } from '@/lib/utils';
 
 interface ProductCardProps {
-  title: string;
-  price: number;
-  image: string;
+  item: any;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({ title, price, image }) => {
-  const p = new Intl.NumberFormat('fa-IR').format(price);
-  const pay = (price: string) => {
-    
-  }
+export const ProductCard: FC<ProductCardProps> = ({item}) => { 
+  const addToCart = useCartStore(_ => _.add);
+  
   return (
-    <div className="bg-primary shadow rounded-xl p-4 pt-0 text-white relative product-card w-40">
+    <div className="product-card relative w-36 rounded-xl bg-primary p-4 pt-0 text-white shadow">
       <div className="flex justify-center">
-        <img src={image} alt={title} className="size-28" />
+        <img src={`/product/${item.category.id}.webp`} alt={item.name} className="size-28" />
       </div>
-      <div className="text-center mt-4">
-        <div className="font-bold text-xs">{title}</div>
-        <div className="mb-5 text-xs">{p} <small>{"تومان"}</small></div>
-        <button className="add-to-cart " onClick={() => pay(p)}>
+      <div className="mt-4 text-center">
+        <div className="text-xs font-bold">{item.name}</div>
+        <div className="mb-5 text-xs">{_d(item.price)} <small>{"تومان"}</small></div>
+        <button className="add-to-cart" onClick={() => addToCart(item)}>
           <span className='cart-icon'>
             <AddCartIcon size={24}/>
           </span>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Layout({children}:Readonly<{
   children: React.ReactNode;
 }>){
-  return <div className="flex h-lvh flex-col">
+  return <div className="flex h-lvh flex-col max-w-[320px]">
       <Toaster />
       {children}
       </div>

@@ -12,7 +12,7 @@ export function ResourceLoader<T>({ queryKey, queryFn, children, resourceName }:
   
   const { data, error, isLoading }: UseQueryResult<T> = useQuery({queryKey: [queryKey], queryFn});
   if (isLoading) {
-    return <div className="text-xl flex-1 flex justify-center">⏳</div>;
+    return <div className="flex flex-1 justify-center text-xl">⏳</div>;
   }
   
   if (error) {
@@ -22,7 +22,6 @@ export function ResourceLoader<T>({ queryKey, queryFn, children, resourceName }:
   if (!data) {
     return <div>🏳 هیچی نیست</div>;
   }
-  console.log(data);
 
   return <>
     {React.Children.map(children, child => {

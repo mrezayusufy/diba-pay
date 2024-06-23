@@ -5,7 +5,7 @@ import { Header } from "./header";
 export const MainLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return <Fragment>
     <Header />
-    <main className="flex flex-col flex-grow">
+    <main className="mx-auto flex w-full max-w-[320px] flex-grow flex-col">
       {children}
     </main>
     <Footer />

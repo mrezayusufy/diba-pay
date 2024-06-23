@@ -1,14 +1,13 @@
 "use client";
 import { _p, cn } from '@/lib/utils';
-import { useStepStore } from '@/store';
-import React from 'react'; 
-import { SignUpForm, VerifyForm } from './forms';
-
+import { useStepStore } from './store';
+import React, { useEffect, useState } from 'react'; 
+import { SignUpForm, VerifyForm } from './components';
 
 function SignUp() { 
-  const _step = useStepStore((state) => state.step); 
-  const _steps = useStepStore(s => s.steps); 
-  
+  const _step = useStepStore(_ => _.step); 
+  const _steps = useStepStore(_ => _.steps); 
+  const setCurrentStep = useStepStore(_ => _.setCurrentStep);
   return (
     <div dir="rtl" className='flex flex-1 flex-col space-y-5 px-3 py-5'>
       <ul className='flex justify-center'>

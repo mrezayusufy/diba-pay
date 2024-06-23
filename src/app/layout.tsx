@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl"> 
       <head><link rel="icon" href="/logo.svg" sizes="any" /></head>
       <QueryProvider>
-        <body className={`${yekanBakh.variable} flex flex-col min-h-lvh bg-[#FFFAF1]`}>
+        <body className={`${yekanBakh.variable} flex flex-col min-h-lvh mx-auto items-center  bg-[#FFFAF1]`}>
           {children}
         </body>
       </QueryProvider>

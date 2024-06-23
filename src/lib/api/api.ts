@@ -4,7 +4,7 @@ import { Wretch } from 'wretch/types'
 const API_BASE_URL = config.api_url;
 
 export const api: Wretch = wretch(API_BASE_URL)
-  .errorType('json')
+  .errorType('json') 
   .catcher(401, (error) => {
     console.error('Unauthorized', error);
   })

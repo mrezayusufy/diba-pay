@@ -8,16 +8,12 @@ import { WalletIcon } from "./icons";
  
 function Footer() {
   return <footer>
-    <ul className="flex justify-around">
+    <ul className="flex justify-center fixed gap-x-12 bottom-0 right-0 bg-white w-svw pt-3">
       <MenuIcon to={{pathname:"/"}}>
         <HomeIcon size={24}/>
         <div>خانه</div>
       </MenuIcon>
-      
-      <MenuIcon to={{pathname: "/wallet", query: {navType: 0}}}> 
-        <WalletIcon size={24}/>
-        <div>کیف‌پول</div>
-      </MenuIcon>
+       
       <MenuIcon to={{pathname: "/account"}}>
         <UserIcon size={24}/>
         <div >حساب کاربری</div>
