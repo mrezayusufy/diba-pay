@@ -15,8 +15,7 @@ async function sendOtpCode(state: any, data: FormData) {
   const mobile_number = data.get('mobile_number')?.toString() || '';
   const otp_code = data.get('otp_code')?.toString() || '';
   
-  if(otp_code) {
-    console.log("verified")
+  if(otp_code) { 
     try {
       const response: IResponse = await api.url('/verify-otp-code').post({ otp_code, mobile_number }).json();
       const token: IToken = await wretch(config.app_url+"/api/auth").post({token: response.token}).json();
@@ -41,8 +40,9 @@ async function sendOtpCode(state: any, data: FormData) {
         status: StatusEnum.verified
       }
     } catch (error: any) {
+      console.error(error)
       return {
-        error: error.json.error,
+        error: error.json,
         success: false,
         status: StatusEnum.failure
       }
