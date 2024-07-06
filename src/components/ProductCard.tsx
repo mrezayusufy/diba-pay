@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { AddCartIcon } from './icons';
 import { useCartStore } from '@/app/(root)/store';
 import { _d } from '@/lib/utils';
-
+import Image from "next/image"
 interface ProductCardProps {
   item: any;
 }
@@ -14,7 +14,7 @@ export const ProductCard: FC<ProductCardProps> = ({item}) => {
   return (
     <div className="product-card relative w-36 rounded-xl bg-primary p-4 pt-0 text-white shadow">
       <div className="flex justify-center">
-        <img src={`/product/${item.category.id}.webp`} alt={item.name} className="size-28" />
+        <Image src={`/product/${item.category.id}.webp`} alt={item.name} className="size-28" width={512} height={512}/>
       </div>
       <div className="mt-4 text-center">
         <div className="text-xs font-bold">{item.name}</div>

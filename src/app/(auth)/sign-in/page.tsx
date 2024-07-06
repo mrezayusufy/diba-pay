@@ -11,12 +11,15 @@ import React, { useActionState } from 'react';
 import { toast } from 'sonner';
 import OtpInput from '@/components/ui/otp-input';
 import { cn } from '@/lib/utils';
+import { config } from '@/config';
 
 export default function SignIn() {
+  
   const router = useRouter();
   const [state, formAction] = useActionState(sendOtpCode, null);
   const [otp, setOtp] = React.useState("");
   const [status, setStatus] = React.useState(StatusEnum.idle);
+  console.warn(config.api_url)
   if(state?.status === StatusEnum.verified) redirect("/");
   React.useEffect(() => {
     setStatus(StatusEnum.idle);

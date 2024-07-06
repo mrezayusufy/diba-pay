@@ -1,10 +1,8 @@
 
-function Page() {
+export default function Page() {
   return (
     <div>
       Account
     </div>
   )
 }
-
-export default Page

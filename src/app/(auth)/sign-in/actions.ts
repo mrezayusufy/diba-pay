@@ -58,6 +58,7 @@ async function sendOtpCode(state: any, data: FormData) {
         status: StatusEnum.success,
       }
     } catch (error: any) {
+      console.error("%cerror", error, "color: red");
       return {
         error: error.json.error,
         success: false,
