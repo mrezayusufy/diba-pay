@@ -1,5 +1,6 @@
 import { ProductsList } from "@/components";
 import Categories from "./components/categories";
+import React from "react"
 export default function Home() {
   return (
       <div className="items-center justify-items-center py-3 font-sans">

@@ -8,7 +8,7 @@ export default function CategoryItem({item}: any){
   const router = useRouter();
   const category = Number(params.get("category"));
   return <li onClick={() => router.push(`/?category=${item.id}`)} className={cn("flex flex-row-reverse items-center justify-center border-b-2 border-transparent text-sm", category === item.id && "border-primary2")}>
-    <Image src={`/product/${item.id}.webp`} alt="" width={32} height={32}/>
+    <Image priority src={`/product/${item.id}.webp`} alt="" width={32} height={32}/>
     <div>{item.name}</div>
   </li>
 }

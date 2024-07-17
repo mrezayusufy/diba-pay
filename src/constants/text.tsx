@@ -26,5 +26,8 @@ export const text = {
   orderList: "لیست سفارشات",
   pay: "پرداخت",
   all: "همه",
-  categories: "دسته بندی ها"
+  categories: "دسته بندی ها",
+  name: "نام",
+  nationalCode: "کد ملی",
+  mobileNo: "شماره موبایل",
 } 

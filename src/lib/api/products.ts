@@ -1,10 +1,9 @@
 import { ProductsResponse } from '@/types';
-import { api } from './api';
+import { API, api } from './api';
 
-export const fetchProducts = async ({queryKey}: any): Promise<ProductsResponse> => {
-  
+export const fetchProducts = async ({queryKey}: any) => {
   const[_key, query] = queryKey;
   const queryString = new URLSearchParams(query).toString();
-  const response = await api.url(`/products?${queryString}`).get().json<ProductsResponse>();
+  const response = await API.get(`/products?${queryString}`) as ProductsResponse;
   return response;
 };
